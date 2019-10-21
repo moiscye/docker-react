@@ -22,6 +22,9 @@ RUN npm run build
 # installing the nginx container 
 FROM nginx
 
+#exposing  port in production
+EXPOSE 80
+
 #copying the build folder created in the first phase
 #the destination folder is found in the nginx documentation
 COPY --from=builder /app/build /usr/share/nginx/html
